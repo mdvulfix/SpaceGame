@@ -166,7 +166,8 @@ public class Quad : MonoBehaviour
             {
                 // need to subdivide parent's neighbor
                 var parentsNeighbor = GetParentsNeighbor(edge);
-                parentsNeighbor?.Subdivide();
+                if (parentsNeighbor)
+                    parentsNeighbor.Subdivide(); //parentsNeighbor?.Subdivide();
             }
             else
             {
@@ -731,11 +732,13 @@ public class Quad : MonoBehaviour
                 // add non-siblings
                 AddNeighbor(EdgeType.Bottom, () =>
                 {
-                    return GetParentsNeighbor(EdgeType.Bottom)?.GetChildren()?.FirstOrDefault(c => c != null && HasAnySharedEdge(c));
+                    //GetParentsNeighbor(EdgeType.Bottom)?.GetChildren()?.FirstOrDefault(c => c != null && HasAnySharedEdge(c));
+                    return null;
                 });
                 AddNeighbor(EdgeType.Left, () =>
-                {
-                    return GetParentsNeighbor(EdgeType.Left)?.GetChildren()?.FirstOrDefault(c => c != null && HasAnySharedEdge(c));
+                {   
+                    //GetParentsNeighbor(EdgeType.Left)?.GetChildren()?.FirstOrDefault(c => c != null && HasAnySharedEdge(c));
+                    return null;
                 });
                 break;
             case QuadType.BottomRight:
@@ -746,11 +749,11 @@ public class Quad : MonoBehaviour
                 // add non-siblings
                 AddNeighbor(EdgeType.Bottom, () =>
                 {
-                    return GetParentsNeighbor(EdgeType.Bottom)?.GetChildren()?.FirstOrDefault(c => c != null && HasAnySharedEdge(c));
+                    return null; //GetParentsNeighbor(EdgeType.Bottom)?.GetChildren()?.FirstOrDefault(c => c != null && HasAnySharedEdge(c));
                 });
                 AddNeighbor(EdgeType.Right, () =>
                 {
-                    return GetParentsNeighbor(EdgeType.Right)?.GetChildren()?.FirstOrDefault(c => c != null && HasAnySharedEdge(c));
+                    return null; //GetParentsNeighbor(EdgeType.Right)?.GetChildren()?.FirstOrDefault(c => c != null && HasAnySharedEdge(c));
                 });
                 break;
             case QuadType.TopLeft:
@@ -775,7 +778,10 @@ public class Quad : MonoBehaviour
                 });
                 AddNeighbor(EdgeType.Left, () =>
                 {
-                    return GetParentsNeighbor(EdgeType.Left)?.GetChildren()?.FirstOrDefault(c => c != null && HasAnySharedEdge(c));
+                    
+                    
+                    
+                    return null; //GetParentsNeighbor(EdgeType.Left)?.GetChildren()?.FirstOrDefault(c => c != null && HasAnySharedEdge(c));
                 });
                 break;
             case QuadType.TopRight:
@@ -786,11 +792,11 @@ public class Quad : MonoBehaviour
                 // add non-siblings
                 AddNeighbor(EdgeType.Top, () =>
                 {
-                    return GetParentsNeighbor(EdgeType.Top)?.GetChildren()?.FirstOrDefault(c => c != null && HasAnySharedEdge(c));
+                    return null; //GetParentsNeighbor(EdgeType.Top)?.GetChildren()?.FirstOrDefault(c => c != null && HasAnySharedEdge(c));
                 });
                 AddNeighbor(EdgeType.Right, () =>
                 {
-                    return GetParentsNeighbor(EdgeType.Right)?.GetChildren()?.FirstOrDefault(c => c != null && HasAnySharedEdge(c));
+                    return null; //GetParentsNeighbor(EdgeType.Right)?.GetChildren()?.FirstOrDefault(c => c != null && HasAnySharedEdge(c));
                 });
                 break;
         }
