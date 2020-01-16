@@ -6,19 +6,21 @@ namespace SpaceGame
 {
     public class Sector : SpaceObject
     {
-
-        Transform sector;
+        [SerializeField]
+        GameObject sector;
+        
+        [SerializeField]
         StarSystem[] starSystems;
 
        
-        public Sector(Transform sector)
+        public Sector(GameObject sector)
         {
             this.sector = sector;
             starSystems = null;
             
         }
         
-        public Sector(Transform sector, StarSystem[] starSystems)
+        public Sector(GameObject sector, StarSystem[] starSystems)
         {
             
             this.sector = sector;

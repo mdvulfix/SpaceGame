@@ -6,19 +6,19 @@ namespace SpaceGame
 {
     public class Space : SpaceObject
     {
-        Transform space;
+        [SerializeField]   
         Sector[] sectors;
 
-        public Space(Transform space)
+        public void SetSector(Sector[] sectors)
         {
-
-            this.space = space;
+            this.sectors = sectors;
 
         }
-
-
-
-
+        
+        public Sector[] GetStarSystem()
+        {
+            return sectors;
+        }
 
     } 
 }

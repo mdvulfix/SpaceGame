@@ -308,10 +308,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a14e4569fc4b8a4ea60d7b23542692a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  space: {fileID: 0}
-  sector: {fileID: 2043348903781857407, guid: 4a50393316573b34ca054316ea4bb0c1, type: 3}
-  sectors: []
-  starSystem: {fileID: 1931252835323765873, guid: b12900f39aef3074a8f10c6b6c27bcbf,
+  _Space: {fileID: 2394454908958339364, guid: f26bd03253b7ac141b5dc84c3dbde1fc, type: 3}
+  _Sector: {fileID: 2043348903781857406, guid: 4a50393316573b34ca054316ea4bb0c1, type: 3}
+  _StarSystem: {fileID: 1931252835323765872, guid: b12900f39aef3074a8f10c6b6c27bcbf,
     type: 3}
 --- !u!1 &1393114899
 GameObject:

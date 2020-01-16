@@ -10,9 +10,6 @@ namespace SpaceGame
         Position position;
 
         [SerializeField]
-        Transform spaceObject;
-
-        [SerializeField]
         long index;
 
         void Start()
