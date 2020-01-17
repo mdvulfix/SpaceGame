@@ -1,22 +1,74 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+
+
+
 namespace SpaceGame
 {
+    public enum SpaceObjectIndexies
+    {
+        Full,
+        Sector,
+        Star,
+        Planet,
+        Moon
+    }
+
     public class SpaceObject : MonoBehaviour
     {
 
-        [SerializeField]
-        Position position;
+ 
+        public Position position; // {get; set;}
+        public string index;//{get; set;}
 
-        [SerializeField]
-        long index;
 
-        void Start()
+
+        void Start() 
         {
-            
+            position = new Position(1,1,1);
         }
 
 
+        public string GetSpaceObjectIndex(SpaceObjectIndexies spaceObject = SpaceObjectIndexies.Full)
+        {
+            string id = "000:000:000:000";
+            string index = this.index;
+            
+            switch (spaceObject)
+            {
+                case SpaceObjectIndexies.Full:
+                {
+                    id = index;
+                    break;
+                }
+                case SpaceObjectIndexies.Sector:
+                {
+                    
+                    //Debug.Log(index.Substring(0, 3));
+                    id = index.Substring(0, 3);
+                    
+                    break;
+                }
+                case SpaceObjectIndexies.Star:
+                {
+                    //Debug.Log(index.Substring(4, 3));
+                    id = index.Substring(4, 3);
+                    break;
+                }   
+                 case SpaceObjectIndexies.Planet:
+                {
+                    //Debug.Log(index.Substring(8, 3));
+                    id = index.Substring(8, 3);
+                    break;
+                }                
+                case SpaceObjectIndexies.Moon:
+                {
+                    //Debug.Log(index.Substring(12, 3));
+                    id = index.Substring(12, 3);
+                    break;
+                }                 
+            }
+            
+            return id;
+        }
     }
 }

@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
+using System.Reflection;
 
 namespace SpaceGame
 {
+    [DefaultMember("Item")]
     public class Position
     {
         int x;

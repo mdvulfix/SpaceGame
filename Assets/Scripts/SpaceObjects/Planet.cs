@@ -7,17 +7,27 @@ namespace SpaceGame
     public class Planet : SpaceObject
     {
 
-        void Start()
+        [SerializeField]
+        Moon[] moons;
+        
+        public Planet(Moon[] moons)
         {
-            
+            SetMoon(moons);
+        }
+    
+        public void SetMoon(Moon[] moons)
+        {
+            this.moons = moons;
+
+        }
+        
+        public Moon[] GetMoon()
+        {
+            return moons;
         }
 
 
-        void Update()
-        {
-            
-        }
-    }  
+    }
 }
 
 

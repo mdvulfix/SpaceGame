@@ -1,47 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace SpaceGame
 {
     public class Sector : SpaceObject
-    {
+    {        
         [SerializeField]
-        GameObject sector;
+        Star[] stars;
         
-        [SerializeField]
-        StarSystem[] starSystems;
-
-       
-        public Sector(GameObject sector)
+        public Sector(Star[] stars)
         {
-            this.sector = sector;
-            starSystems = null;
-            
-        }
-        
-        public Sector(GameObject sector, StarSystem[] starSystems)
-        {
-            
-            this.sector = sector;
-            SetStarSystem(starSystems);
-            
-        
+            SetStar(stars);
         }
     
-        public void SetStarSystem(StarSystem[] starSystems)
+        public void SetStar(Star[] stars)
         {
-            this.starSystems = starSystems;
+            this.stars = stars;
 
         }
         
-        public StarSystem[] GetStarSystem()
+        public Star[] GetStar()
         {
-            return starSystems;
+            return stars;
         }
-
-
-
     }
 }
 

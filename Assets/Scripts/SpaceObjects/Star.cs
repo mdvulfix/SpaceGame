@@ -1,23 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace SpaceGame
 {
     public class Star : SpaceObject
-    {
-        // Start is called before the first frame update
-        void Start()
+    {      
+        [SerializeField]
+        Planet[] planets;
+        
+        public Star(Planet[] planets)
         {
-            
+            SetPlanet(planets);
+        }
+    
+        public void SetPlanet(Planet[] planets)
+        {
+            this.planets = planets;
+
+        }
+        
+        public Planet[] GetPlanet()
+        {
+            return planets;
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-            
-        }
+
     }
+
 }
-
-

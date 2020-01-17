@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2043348903781857407}
-  - component: {fileID: 943005626747270293}
   - component: {fileID: 1541922623648795491}
   m_Layer: 0
   m_Name: Sector
@@ -32,19 +31,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &943005626747270293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2043348903781857406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 240dc971e4c82334a9f931a31990dc4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  index: 0
 --- !u!114 &1541922623648795491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,3 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e87672156b77e418601b3fb73da419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  index: 
+  stars: []

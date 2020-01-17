@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace SpaceGame
 {
@@ -15,7 +13,7 @@ namespace SpaceGame
 
         }
         
-        public Sector[] GetStarSystem()
+        public Sector[] GetSector()
         {
             return sectors;
         }

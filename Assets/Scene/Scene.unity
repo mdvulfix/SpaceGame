@@ -310,8 +310,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Space: {fileID: 2394454908958339364, guid: f26bd03253b7ac141b5dc84c3dbde1fc, type: 3}
   _Sector: {fileID: 2043348903781857406, guid: 4a50393316573b34ca054316ea4bb0c1, type: 3}
-  _StarSystem: {fileID: 1931252835323765872, guid: b12900f39aef3074a8f10c6b6c27bcbf,
-    type: 3}
+  _Star: {fileID: 1931252835323765872, guid: b12900f39aef3074a8f10c6b6c27bcbf, type: 3}
+  _Planet: {fileID: 7104209045277881741, guid: ad76f3f5a5d410742b5a44b9e73fdb85, type: 3}
+  _Moon: {fileID: 4708142939640974275, guid: 59b572b3e2b066c4c935f5d2b673f0f1, type: 3}
 --- !u!1 &1393114899
 GameObject:
   m_ObjectHideFlags: 0
