@@ -26,7 +26,6 @@ namespace SpaceGame
             return moons;
         }
 
-
     }
 }
 

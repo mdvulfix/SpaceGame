@@ -16,17 +16,14 @@ namespace SpaceGame
     public class SpaceObject : MonoBehaviour
     {
 
- 
-        public Position position; // {get; set;}
         public string index;//{get; set;}
+        public Position position; // {get; set;}
+        
+        Vector3 rotation;
 
 
 
-        void Start() 
-        {
-            position = new Position(1,1,1);
-        }
-
+  
 
         public string GetSpaceObjectIndex(SpaceObjectIndexies spaceObject = SpaceObjectIndexies.Full)
         {

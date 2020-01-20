@@ -37,14 +37,14 @@ namespace Assets.VampirasuStudios.ScaleSpacewithFloatingOrigin.DemoScene
             {
                 var zoomMult = startZoom > 100000000 ? 100000000d : startZoom;
                 velZoom = velZoom * -zoomMult * 100;
-               
+                
             }
 
             if (startZoom - velZoom <= 10)
             {
                 velZoom = startZoom - 10;
-          
-               
+            
+                
             }
             else if (startZoom - velZoom > maxZoom)
             {
@@ -55,7 +55,7 @@ namespace Assets.VampirasuStudios.ScaleSpacewithFloatingOrigin.DemoScene
             startZoom -= velZoom;
             Velocity = Velocity + new Vector3(0, 0, (float)velZoom);
 
-            ScaleSpaceManager.Instance.MoveCameras(Velocity);
+            //ScaleSpaceManager.Instance.MoveCameras(Velocity);
             
         }
         double maxZoom = 500000000;

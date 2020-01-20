@@ -7,6 +7,7 @@ namespace SpaceGame
     public class SceneControl : MonoBehaviour
     {
         public GameObject _Space;
+        
         public GameObject _Sector;
         public GameObject _Star;
         public GameObject _Planet;
@@ -25,13 +26,16 @@ namespace SpaceGame
         }
 
         #region Start functions-------------------------
-            
+
+        [ExecuteInEditMode] 
         void CreateSpace()
         {
 
-            GameObject objSpace = Instantiate(_Space, new Vector3(0, 0, 0), Quaternion.identity);
-            objSpace.name = "Space";
-            objSpace.transform.SetParent(transform);
+            //GameObject objSpace = Instantiate(_Space, new Vector3(0, 0, 0), Quaternion.identity);
+            //objSpace.name = "Space";
+            //objSpace.transform.SetParent(transform);
+            
+            GameObject objSpace = _Space;
             space = objSpace.GetComponent<Space>();
             space.index = GenerateIndex();
 
