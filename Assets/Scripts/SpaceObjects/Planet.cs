@@ -26,6 +26,13 @@ namespace SpaceGame
             return moons;
         }
 
+
+        void Awake()
+        {
+            rotationSpeed = 0.1f;
+        }
+
+
     }
 }
 

@@ -617,7 +617,7 @@ PlayerSettings:
   facebookStatus: 1
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
-  apiCompatibilityLevel: 6
+  apiCompatibilityLevel: 2
   cloudProjectId: 2f8957f5-50a2-4097-9e2c-f13185860175
   framebufferDepthMemorylessMode: 0
   projectName: Space

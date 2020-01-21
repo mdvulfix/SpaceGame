@@ -17,17 +17,16 @@ namespace SpaceGame
         
         void Start()
         {
-            CreateSpace();
-            CreateSectors(1);
-            CreateStars(1);
-            CreatePlanets(1);
-            CreateMoons(1);
+            //CreateSpace();
+            //CreateSectors(1);
+            //CreateStars(1);
+            //CreatePlanets(1);
+            //CreateMoons(1);
 
         }
 
         #region Start functions-------------------------
 
-        [ExecuteInEditMode] 
         void CreateSpace()
         {
 

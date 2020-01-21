@@ -9,9 +9,9 @@ namespace SpaceGame
 
         Planet planet;
 
-        void Start()
+        void Awake()
         {
-            
+            rotationSpeed = 0.1f;
         }
 
 

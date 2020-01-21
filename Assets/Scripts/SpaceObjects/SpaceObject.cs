@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 
 
@@ -19,9 +20,11 @@ namespace SpaceGame
         public string index;//{get; set;}
         public Position position; // {get; set;}
         
-        Vector3 rotation;
+        public float rotationSpeed = 0;
 
-
+        void Start() {
+            StartCoroutine(UpdateMovements());
+        }
 
   
 
@@ -67,5 +70,23 @@ namespace SpaceGame
             
             return id;
         }
+    
+        void RotateAround()
+        {
+            transform.RotateAround (transform.parent.position,new Vector3(0.0f,1.0f,0.0f),20 * Time.deltaTime * rotationSpeed);
+
+        }
+
+        private IEnumerator UpdateMovements()
+        {
+            while (true)
+            {
+                RotateAround();
+                yield return null;
+
+            }
+        }
+
+        
     }
 }
