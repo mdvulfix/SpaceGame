@@ -4,21 +4,31 @@ namespace SpaceGame
 {
     public class Space : SpaceObject
     {
-        [SerializeField]   
-        Sector[] sectors;
+        public Sector[] Sectors {get; private set;}
 
-        public void SetSector(Sector[] sectors)
+    #region Constractors
+
+        public Space(Sector[] sectors)
         {
-            this.sectors = sectors;
+            this.Sectors = sectors;
+ 
 
         }
         
-        public Sector[] GetSector()
+    #endregion
+
+
+    #region Methods
+
+        public override void SetChild(ISpaceObject[] spaceObject)
         {
-            return sectors;
+            this.Sectors = spaceObject as Sector[];
+
         }
 
-    } 
+    #endregion
+
+    }
 }
 
 

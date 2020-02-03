@@ -4,34 +4,63 @@ using UnityEngine;
 
 namespace SpaceGame
 {
-    public class Planet : SpaceObject
+    public class Planet : SpaceObject, INaturalBody
     {
 
-        [SerializeField]
-        Moon[] moons;
+        public Star Star {get; private set;}
+        public Moon[] Moons {get; private set;}
         
-        public Planet(Moon[] moons)
+        
+        public float Diameter {get; private set;}
+        public float Mass {get; private set;}
+
+        public float RotationSpeed {get; private set;}
+              
+
+    #region Constractors
+
+        public Planet(Star star, Moon[] moons)
         {
-            SetMoon(moons);
-        }
-    
-        public void SetMoon(Moon[] moons)
-        {
-            this.moons = moons;
+            this.Star = star;
+            this.Moons = moons;
 
         }
         
-        public Moon[] GetMoon()
+    #endregion
+
+    #region Methods
+
+        public override void SetChild(ISpaceObject[] spaceObject)
         {
-            return moons;
+            this.Moons = spaceObject as Moon[];
+
         }
 
+    #endregion
+
+    #region RunTime
 
         void Awake()
         {
             RotationSpeed = 0.1f;
         }
 
+        private void FixedUpdate() 
+        {
+            RotationAround(RotationSpeed);
+        }
+        
+    #endregion
+
+    #region Functions
+
+
+        public void RotationAround(float rotationSpeed)
+        {
+            transform.RotateAround (transform.parent.position,new Vector3(0.0f,1.0f,0.0f),20 * Time.deltaTime * rotationSpeed);
+        }
+
+    #endregion
 
     }
 }

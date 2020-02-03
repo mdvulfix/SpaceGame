@@ -2,10 +2,9 @@
 
 namespace SpaceGame
 {
-    public interface ISelectable: IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler, ISelectHandler, IDeselectHandler
+    public interface ISelectable: IPointerClickHandler, ISelectHandler, IDeselectHandler
     {
-        void SelectObject();
-        void DeselectObject();
+
     }
 
 

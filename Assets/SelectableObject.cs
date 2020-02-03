@@ -79,7 +79,7 @@ namespace SpaceGame
         {
             foreach (ISelectable sObj in AllSelectedObject)
             {
-                sObj.DeselectObject();
+                //sObj.DeselectObject();
             }
             AllSelectedObject.Clear();
                     

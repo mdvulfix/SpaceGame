@@ -1,6 +1,6 @@
 namespace SpaceGame
 {
-    interface ICoordinate
+    public interface IPosition
     {
         Position Coordinates {get; }  
          

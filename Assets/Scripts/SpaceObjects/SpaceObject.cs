@@ -1,47 +1,66 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+
+
 
 namespace SpaceGame
 {
 
-    public class SpaceObject : MonoBehaviour, ICoordinate, ISpaceBody
+    public class SpaceObject : MonoBehaviour, ISpaceObject
     {
-
+        public string Name {get; private set;}
         public Position Coordinates {get; private set;}
-
-        public string Name {get; protected set;}
-        public float Diameter {get; protected set;}
-        public float Mass {get; protected set;}
-        public float RotationPeriod {get; protected set;}
-        public float RotationSpeed {get; protected set;}
-        public float CirculationPeriod {get; protected set;}
-        public float DistanceToStar {get; protected set;} 
         
 
-
-
-        
-   
-
-
-
-
-        #region SpaceBodyBehaviour
+    #region RunTime
+        private void Update() 
+        {
             
-            public void RotationAround(float rotationSpeed)
-            {
-                transform.RotateAround (transform.parent.position,new Vector3(0.0f,1.0f,0.0f),20 * Time.deltaTime * rotationSpeed);
 
-            }
 
-            public void CirculationAround(float circulationPeriod)
-            {
-                //some metod
+        }
+    #endregion
 
-            }
+       
+    #region Methods
+        public virtual void SetChild(ISpaceObject[] spaceObject)
+        {
+            Debug.Log("Требуется переопределить метод!");
 
-        #endregion
+        }
+
+           
+    #endregion
+       
+     
+       
+       
+    #region SelectionHandler
+
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+
+
+        }
+
+
+        public void OnSelect(BaseEventData eventData)
+        {
+
+
+        }
+
+
+        public void OnDeselect(BaseEventData eventData)
+        {
+
+
+
+        }
+
+    #endregion
+        
     }
 }

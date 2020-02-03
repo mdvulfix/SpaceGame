@@ -2,26 +2,46 @@
 
 namespace SpaceGame
 {
+       
     public class Sector : SpaceObject
     {        
-        [SerializeField]
-        Star[] stars;
+        public Star[] Stars {get ; private set;}
+       
         
+    #region Constractors
+
         public Sector(Star[] stars)
         {
-            SetStar(stars);
-        }
-    
-        public void SetStar(Star[] stars)
-        {
-            this.stars = stars;
-
+            
+            this.Stars = stars;
         }
         
-        public Star[] GetStar()
+    #endregion
+    
+    #region RunTime
+        private void FixedUpdate() 
         {
-            return stars;
+            
         }
+        
+    #endregion
+
+
+    #region Methods
+
+        public override void SetChild(ISpaceObject[] spaceObject)
+        {
+            this.Stars = spaceObject as Star[];
+
+        }
+
+    #endregion
+
+
+    #region Functions
+
+    #endregion
+
     }
 }
 
