@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace SpaceGame
 {
-    public class StarGenerator: SpaceMapGenerator
+    public class StarGenerator
     {
         
         static Star[] _stars;
@@ -15,19 +15,20 @@ namespace SpaceGame
         {
             _stars = new Star[amount];
             
-
             for (int index = 1, i = 0; i < amount; index++, i++)
             {
-                GameObject objStar = Instantiate(SpaceMapGenerator.GetPrefab(SpaceObjectPrefab.Star), new Vector3(0, 0, 0), Quaternion.identity);
+                GameObject objStar = MonoBehaviour.Instantiate(SceneDataHandler.GetPrefab(SpaceObjectPrefab.Star), new Vector3(0, 0, 0), Quaternion.identity);
 
                 _stars[i] = objStar.GetComponent<Star>();
                 //sectors[i].index = GenerateIndex(index.ToString());
                 //sectors[i].Coordinates =
                 //sectors[i].Name =
-                _stars[i].SetChild(PlanetGenerator.Create(_stars[i], SpaceMap.AmountPlanets));
+
+                Planet[] _planet = PlanetGenerator.Create(_stars[i], 2);
+                _stars[i].SetChild(_planet);
 
                 objStar.name = "Star:" ; // + sectors[i].index;
-                objStar.transform.SetParent(_stars[i].transform);
+                objStar.transform.SetParent(sector.transform);
 
             }
             sector.SetChild(_stars);

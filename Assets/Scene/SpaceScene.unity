@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.110972546, g: 0.06666745, b: 0.15630046, a: 1}
+  m_IndirectSpecularColor: {r: 0.11041687, g: 0.06668758, b: 0.1558218, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -308,7 +308,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aa43a79c6bead948ab398d14cc9d844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scene: {fileID: 979448712}
+  space: {fileID: 770728535248704845, guid: a281928149737264f91e13c13dfc3b04, type: 3}
+  sector: {fileID: 2043348903781857406, guid: 4a50393316573b34ca054316ea4bb0c1, type: 3}
+  star: {fileID: 1931252835323765872, guid: b12900f39aef3074a8f10c6b6c27bcbf, type: 3}
+  planet: {fileID: 9110625957621198604, guid: ad76f3f5a5d410742b5a44b9e73fdb85, type: 3}
+  moon: {fileID: 8751703314413746024, guid: 59b572b3e2b066c4c935f5d2b673f0f1, type: 3}
 --- !u!1 &1131516099
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,8 +368,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 20

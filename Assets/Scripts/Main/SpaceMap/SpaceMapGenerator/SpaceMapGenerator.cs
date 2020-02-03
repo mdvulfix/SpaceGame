@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace SpaceGame
 {
-    public class SpaceMapGenerator: SpaceMap
+    public static class SpaceMapGenerator
     {
                 
         public static void CreateMap() 

@@ -4,22 +4,41 @@ using UnityEngine;
 
 namespace SpaceGame
 {
+    
+    public enum SpaceObjectPrefab
+    {
+        Space, Sector, Star, Planet, Moon
+            
+    }
+    
+    
     [System.Serializable]
     public class SceneDataHandler : MonoBehaviour
     {
-        public GameObject _scene;
-        //public static GameObject Scene {get {return _scene;} }
         
-        [SerializeField] static GameObject _space;
-        [SerializeField] static GameObject _sector;
-        [SerializeField] static GameObject _star;
-        [SerializeField] static GameObject _planet;
-        [SerializeField] static GameObject _moon;
+        [SerializeField] GameObject space;
+        [SerializeField] GameObject sector;
+        [SerializeField] GameObject star;
+        [SerializeField] GameObject planet;
+        [SerializeField] GameObject moon;
+        
+        public static GameObject Scene {get; private set;}
+        public static GameObject Space {get; private set;}
+        public static GameObject Sector {get; private set;}
+        public static GameObject Star {get; private set;}
+        public static GameObject Planet {get; private set;}
+        public static GameObject Moon {get; private set;}
 
-        public enum SpaceObjectPrefab
+
+        private void Awake() 
         {
-            Space, Sector, Star, Planet, Moon
-            
+            Scene = this.gameObject;
+            Space = this.space;
+            Sector = this.sector;
+            Star = this.star;
+            Planet = this.planet;
+            Moon = this.moon;
+        
         }
         
         public static GameObject GetPrefab(SpaceObjectPrefab spaceObject)
@@ -30,41 +49,37 @@ namespace SpaceGame
             {
                 case SpaceObjectPrefab.Space: 
                 {
-                    prefab = _space; 
+                    prefab = Space; 
                     break;
                 }
                 case SpaceObjectPrefab.Sector: 
                 {
-                    prefab = _sector; 
+                    prefab = Sector; 
                     break;
                 }
                 case SpaceObjectPrefab.Star: 
                 {
-                    prefab = _star; 
+                    prefab = Star; 
                     break;
                 }
                 case SpaceObjectPrefab.Planet:
                 {
-                    prefab = _planet; 
+                    prefab = Planet; 
                     break;
                 }
                 case SpaceObjectPrefab.Moon:
                 {
-                    prefab = _moon; 
+                    prefab = Moon; 
                     break;
                 }
                 default:
-                    //prefab = _scene;
+                    prefab = Scene;
                     break;
             }
             return prefab;
         }
 
-        private void Awake() 
-        {
 
-        
-        }
         
         
         void Start()

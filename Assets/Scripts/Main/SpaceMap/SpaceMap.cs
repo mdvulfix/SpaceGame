@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace SpaceGame
 {
-    public class SpaceMap : SceneDataHandler
+    public static class SpaceMap
     {
         static Sector[] AllSectors;
         static Star[] AllStars;
@@ -14,7 +14,7 @@ namespace SpaceGame
         public static int AmountStars {get; private set;}
         public static int AmountPlanets {get; private set;}
         
-        private void Awake() 
+        private static void Awake() 
         {
             AmountSectors = 2;
             AmountSectors = 1;
