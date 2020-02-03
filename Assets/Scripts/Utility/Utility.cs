@@ -1,13 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 
-public class Utility : MonoBehaviour
+namespace SpaceGame
 {
-    public static Vector3 WorldToScreenPoint(Camera camera, Vector3 position)
+    
+    public class Utility : MonoBehaviour
     {
-        return camera.WorldToScreenPoint(position);
-    }
+        
+        [SerializeField] public static GameObject UI;
+        [SerializeField] public static GameObject ObjectLabelPrefab;
 
+
+        
+        public static Vector3 WorldToScreenPoint(Camera camera, Vector3 position)
+        {
+            return camera.WorldToScreenPoint(position);
+        }
+
+
+    }
 
 }

@@ -29,7 +29,7 @@ namespace SpaceGame
 
         void Awake()
         {
-            rotationSpeed = 0.1f;
+            RotationSpeed = 0.1f;
         }
 
 

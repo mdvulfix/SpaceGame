@@ -36,7 +36,7 @@ namespace SpaceGame
             
             GameObject objSpace = _Space;
             space = objSpace.GetComponent<Space>();
-            space.index = GenerateIndex();
+            //space.index = GenerateIndex();
 
         }
 
@@ -50,8 +50,8 @@ namespace SpaceGame
                 GameObject objSector = Instantiate(_Sector, new Vector3(0, 0, 0), Quaternion.identity);
 
                 sectors[i] = objSector.GetComponent<Sector>();
-                sectors[i].index = GenerateIndex(index.ToString());
-                objSector.name = "Sector:" + sectors[i].index;
+                //sectors[i].index = GenerateIndex(index.ToString());
+                objSector.name = "Sector:"; //+ sectors[i].index;
                 objSector.transform.SetParent(space.transform);
 
             }
@@ -71,9 +71,9 @@ namespace SpaceGame
                     GameObject objStar = Instantiate(_Star, new Vector3(0, 0, 0), Quaternion.identity);
                     
                     stars[i] = objStar.GetComponent<Star>();
-                    stars[i].index = GenerateIndex(sector.GetSpaceObjectIndex(SpaceObjectIndexies.Sector), index.ToString());
+                    //stars[i].index = GenerateIndex(sector.GetSpaceObjectIndex(SpaceObjectIndexies.Sector), index.ToString());
                     
-                    objStar.name = "Star:" + stars[i].index;
+                    objStar.name = "Star:"; //+ stars[i].index;
                     objStar.transform.SetParent(sector.transform);
                     
                     
@@ -99,9 +99,9 @@ namespace SpaceGame
                         GameObject objPlanet = Instantiate(_Planet, new Vector3(0, 0, 0), Quaternion.identity);
                         
                         planets[i] = objPlanet.GetComponent<Planet>();
-                        planets[i].index = GenerateIndex(sector.GetSpaceObjectIndex(SpaceObjectIndexies.Sector), star.GetSpaceObjectIndex(SpaceObjectIndexies.Star), index.ToString());
+                        //planets[i].index = GenerateIndex(sector.GetSpaceObjectIndex(SpaceObjectIndexies.Sector), star.GetSpaceObjectIndex(SpaceObjectIndexies.Star), index.ToString());
                         
-                        objPlanet.name = "Planet:" + planets[i].index;
+                        objPlanet.name = "Planet:"; //+ planets[i].index;
                         objPlanet.transform.SetParent(star.transform);
 
                     }
@@ -133,9 +133,9 @@ namespace SpaceGame
                             GameObject objMoon = Instantiate(_Moon, new Vector3(0, 0, 0), Quaternion.identity);
                             
                             moons[i] = objMoon.GetComponent<Moon>();
-                            moons[i].index = GenerateIndex(sector.GetSpaceObjectIndex(SpaceObjectIndexies.Sector), star.GetSpaceObjectIndex(SpaceObjectIndexies.Star), planet.GetSpaceObjectIndex(SpaceObjectIndexies.Planet), index.ToString());
+                            //moons[i].index = GenerateIndex(sector.GetSpaceObjectIndex(SpaceObjectIndexies.Sector), star.GetSpaceObjectIndex(SpaceObjectIndexies.Star), planet.GetSpaceObjectIndex(SpaceObjectIndexies.Planet), index.ToString());
                             
-                            objMoon.name = "Moon:" + moons[i].index;
+                            objMoon.name = "Moon:"; //+ moons[i].index;
                             objMoon.transform.SetParent(planet.transform);
 
                         }
