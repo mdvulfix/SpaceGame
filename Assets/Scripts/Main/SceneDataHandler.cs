@@ -38,6 +38,8 @@ namespace SpaceGame
             Star = this.star;
             Planet = this.planet;
             Moon = this.moon;
+
+            
         
         }
         
@@ -85,8 +87,8 @@ namespace SpaceGame
         void Start()
         {
 
+            SpaceMap.Ganerate();
             
-            SpaceMap.GanerateMap();
 
             //CreateSpace();
             //CreateSectors(1);

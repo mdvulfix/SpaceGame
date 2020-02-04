@@ -18,7 +18,6 @@ namespace SpaceGame
             
             Space _space = objSpace.GetComponent<Space>();
             //_space.Coordinates =
-            //_space.Name =
             Sector[] _sectors = SectorGenerator.Create(_space, 1);
             _space.SetChild(_sectors);
 

@@ -1,7 +1,8 @@
 namespace SpaceGame
 {
-    public interface ISpaceObject : IPosition, ISelectable
+    public interface ISpaceObject : ICoordinates, ISelectable
     {
         string Name {get; }
+        
     }
 }

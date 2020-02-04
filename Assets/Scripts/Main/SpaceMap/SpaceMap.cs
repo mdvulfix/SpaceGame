@@ -16,16 +16,16 @@ namespace SpaceGame
         
         private static void Awake() 
         {
-            AmountSectors = 2;
             AmountSectors = 1;
+
 
         }
 
 
 
-        public static void GanerateMap() 
+        public static void Ganerate() 
         {
-            SpaceMapGenerator.CreateMap();
+            SpaceGenerator.Create();
 
         }
             

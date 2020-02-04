@@ -19,11 +19,11 @@ namespace SpaceGame
 
                 _planets[i] = objPlanet.GetComponent<Planet>();
                 //sectors[i].index = GenerateIndex(index.ToString());
-                //sectors[i].Coordinates =
+                _planets[i].SetPosition(new Coordinates(Random.Range(100,500),0,0, 10, star.Position.scale));
                 //sectors[i].Name =
 
-                //Moon[] _moon = MoonGenerator.Create(_planet[i], 2);
-                //_planets[i].SetChild(_moon);
+                Moon[] _moon = MoonGenerator.Create(_planets[i], 2);
+                _planets[i].SetChild(_moon);
 
                 objPlanet.name = "Planet:" ; // + sectors[i].index;
                 objPlanet.transform.SetParent(star.transform);

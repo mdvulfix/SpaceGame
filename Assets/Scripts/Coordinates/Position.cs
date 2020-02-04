@@ -11,15 +11,13 @@ namespace SpaceGame
         int y;
         [SerializeField]
         int z;
-        [SerializeField]
-        int scale;
+
         
-        public Position (int x, int y, int z, int scale)
+        public Position (int x, int y, int z)
         {
             this.x = x;
             this.y = y;
             this.z = z;
-            this.scale = scale;
 
         }
     
@@ -33,13 +31,13 @@ namespace SpaceGame
         public static Position operator + (Position a, Position b) 
         {  
             
-            Position position = new Position(a.x + b.x, a.y + b.y, a.z + b.z, a.scale + b.scale);
+            Position position = new Position(a.x + b.x, a.y + b.y, a.z + b.z);
             return position;
         }  
 
         public static Position operator - (Position a, Position b) 
         {  
-            Position position = new Position(a.x - b.x, a.y - b.y, a.z - b.z, a.scale - b.scale);
+            Position position = new Position(a.x - b.x, a.y - b.y, a.z - b.z);
             return position;
         }
   
@@ -48,12 +46,12 @@ namespace SpaceGame
             if (! (obj is Position)) return false;
         
             Position position = (Position) obj;
-            return x == position.x && y == position.y && z == position.z && scale == position.scale;
+            return x == position.x && y == position.y && z == position.z;
         }
         
         public override int GetHashCode()
         { 
-            return ((x ^ y) ^ z)^scale;
+            return (x ^ y) ^ z;
         } 
 
 

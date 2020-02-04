@@ -9,34 +9,51 @@ namespace SpaceGame
 
     public class SpaceObject : MonoBehaviour, ISpaceObject
     {
-        public string Name {get; private set;}
-        public Position Coordinates {get; private set;}
+        public string Name {get; protected set;}
+        public Coordinates Position {get; protected set;}
+        public Coordinates _position;
         
 
-    #region RunTime
+        #region RunTime
+        private void Awake() 
+        {
+
+
+        }
+
         private void Update() 
         {
             
 
 
         }
-    #endregion
+        #endregion
 
        
-    #region Methods
+        #region Methods
         public virtual void SetChild(ISpaceObject[] spaceObject)
         {
             Debug.Log("Требуется переопределить метод!");
 
         }
+        public void SetPosition(Coordinates position)
+        {
+            this.Position = position;
+            this._position = position;
+            this.transform.position = Position.position;
+            this.transform.localScale *= Position.scale;
+
+
+        }
+
 
            
-    #endregion
+        #endregion
        
      
        
        
-    #region SelectionHandler
+        #region SelectionHandler
 
 
         public void OnPointerClick(PointerEventData eventData)
@@ -60,7 +77,7 @@ namespace SpaceGame
 
         }
 
-    #endregion
+        #endregion
         
     }
 }

@@ -8,39 +8,50 @@ namespace SpaceGame
         public Star[] Stars {get ; private set;}
        
         
-    #region Constractors
+        #region Constractors
 
         public Sector(Star[] stars)
         {
             
             this.Stars = stars;
         }
-        
-    #endregion
+        #endregion
     
-    #region RunTime
+
+        #region RunTime
+        private void Start() 
+        {
+            
+        }
+
         private void FixedUpdate() 
         {
             
         }
         
-    #endregion
+        #endregion
 
 
-    #region Methods
-
+        #region Methods
         public override void SetChild(ISpaceObject[] spaceObject)
         {
             this.Stars = spaceObject as Star[];
 
         }
 
-    #endregion
 
 
-    #region Functions
 
-    #endregion
+
+
+
+
+        #endregion
+
+
+        #region Functions
+
+        #endregion
 
     }
 }

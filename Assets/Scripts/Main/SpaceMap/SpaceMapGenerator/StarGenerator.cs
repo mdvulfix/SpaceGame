@@ -21,7 +21,8 @@ namespace SpaceGame
 
                 _stars[i] = objStar.GetComponent<Star>();
                 //sectors[i].index = GenerateIndex(index.ToString());
-                //sectors[i].Coordinates =
+                _stars[i].SetPosition(new Coordinates(0,0,0, 100, sector.Position.scale));
+
                 //sectors[i].Name =
 
                 Planet[] _planet = PlanetGenerator.Create(_stars[i], 2);

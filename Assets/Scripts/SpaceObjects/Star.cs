@@ -19,7 +19,7 @@ namespace SpaceGame
         
         
         
-    #region Constractors
+        #region Constractors
 
         public Star(Sector sector, Planet[] planets)
         {
@@ -28,9 +28,9 @@ namespace SpaceGame
 
         }
         
-    #endregion
+        #endregion
 
-    #region Methods
+        #region Methods
 
         public override void SetChild(ISpaceObject[] spaceObject)
         {
@@ -38,27 +38,34 @@ namespace SpaceGame
 
         }
 
-    #endregion
 
-    #region RunTime
+
+
+
+
+
+
+
+
+
+        #endregion
+
+        #region RunTime
         private void FixedUpdate() 
         {
             RotationAround(RotationSpeed);
         }
         
-    #endregion
+        #endregion
 
-
-
-
-    #region Functions
+        #region Functions
 
         public void RotationAround(float rotationSpeed)
         {
             transform.RotateAround (transform.parent.position,new Vector3(0.0f,1.0f,0.0f),20 * Time.deltaTime * rotationSpeed);
         }
 
-   #endregion
+        #endregion
     }
 
 }
